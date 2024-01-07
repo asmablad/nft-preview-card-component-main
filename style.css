@@ -98,7 +98,19 @@ main {
 .flex-group {
     display: flex;
     gap: 0.5rem;
+    flex-wrap: wrap;
     align-items: center;
+}
+.visually-hidden:not(:focus):not(:active) {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
 }
 .info {
     display: flex;
@@ -123,7 +135,7 @@ span {
     font-size: 1rem;
     font-weight: var(--fw-regular);
 }
-.eth {
+.price {
     color: var(--clr-Cyan);
 }
 .line {
@@ -131,7 +143,7 @@ span {
     height: 1px;
     background: var(--clr-line);
 }
-h1:hover, .eth:hover, span:hover {
+h1:hover, span:hover {
     cursor: pointer;
     color: var(--clr-Cyan);
 }
@@ -141,6 +153,7 @@ h1:hover, .eth:hover, span:hover {
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
+  
 }
 .overlay {
   position: absolute;
@@ -151,7 +164,7 @@ h1:hover, .eth:hover, span:hover {
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: .3s ease;
+  transition: 300ms ease;
   background-color: hsla(var(--clr-Cyan-hsl), 0.4);
 }
 .image:hover .overlay {
